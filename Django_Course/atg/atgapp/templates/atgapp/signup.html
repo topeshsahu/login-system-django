@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <div>
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissable dafe show" role="alert">
+            <strong>
+                Message :
+            </strong>
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        <h1>Sign Up</h1>
+        <form action="/signup" method="POST">
+          {% csrf_token %}
+            <label for="username">Enter username :</label>
+            <input type="text" name="username" id="username">
+            <br>
+            <label for="useremail">Enter Email :</label>
+            <input type="email" name="useremail" id="useremail">
+            <br>
+            <label for="fname">Enter first name :</label>
+            <input type="text" name="fname" id="fname">
+            <br>
+            <label for="lname">Enter last name :</label>
+            <input type="text" name="lname" id="lname">
+            <br>
+            <label for="password1">Enter password </label>
+            <input type="password" name="password1" id="password1">
+            <br>
+            <label for="password2">Re-Enter password :</label>
+            <input type="password" name="password2" id="password2">
+            <br>
+            <button type="submit"> Login </button>
+        </form>
+    </div>
+</body>
+
+</html>

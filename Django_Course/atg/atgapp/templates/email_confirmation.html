@@ -1,0 +1,5 @@
+
+Hello {{ name }}
+This is a confirmation email in order to activate your account.
+Please confirm your email by clicking at given link.
+Click here : http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
